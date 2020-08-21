@@ -1147,6 +1147,7 @@ section {
 #details {
     /*background: radial-gradient(50% 50%, #376E6F 0%, #1C3334 87%);*/
     background: radial-gradient(50% 50%, #161d6b 0%, #0B0F3C 87%);
+    /*border-top: red 2px solid;*/
 }
 
 .gallery .gallery-item {
