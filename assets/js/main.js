@@ -140,7 +140,7 @@ var GRO = {};
         }, s.prototype.draw = function () {
             this.y;
             var e = this.rotateX(i).rotateY(a).rotateZ(0).perspectiveProjection(100, 100);
-            this.color = "rgba(255, 186, 0, 0.2)", t.fillStyle = this.color, t.fillRect(e.x, e.y, 1.5, 1.5)
+            this.color = "rgba(255, 186, 0, 1)", t.fillStyle = this.color, t.fillRect(e.x, e.y, 1.5, 1.5)
         };
         for (var r = 0; r < 50; r++) for (var l = 0; l < 50; l++) {
             n.push(new s(200 * l - 5e3, 0, 200 * r - 5e3))
@@ -164,7 +164,7 @@ var GRO = {};
                     m = Math.cos(d / 50 * 4 * Math.PI + o);
                 n[50 * d + c].y = 1500 + u * m * 1050, n[r].draw()
             }
-            o += .0001, i += .002, a += .002, window.requestAnimationFrame(s)
+            o += .002, i += .005, a += .005, window.requestAnimationFrame(s)
         }()
     },n.ready((function () {
         $("#can").length && GRO.spinnerAnimation()
