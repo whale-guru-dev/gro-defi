@@ -53,12 +53,12 @@ function init() {
 
         color: 0xffba00,
         transparent: true,
-        opacity: 0.2,
+        opacity: 1,
         program: function ( context ) {
 
             context.beginPath();
             // renderer.setClearColorHex( 0x1C3334, 1 );
-            context.arc( 0, 0, 0.5, 0, PI2, true );
+            context.arc( 0, 0, 0.2, 0, PI2, true );
 
             context.fill();
 
