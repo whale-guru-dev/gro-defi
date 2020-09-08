@@ -257,59 +257,6 @@ function connectAccount() {
 }
 
 $(window).on("load", function() {
-    // $("#home").length && particlesJS("home", {
-    //     particles: {
-    //         number: {
-    //             value: 28
-    //         },
-    //         color: {
-    //             value: ["#0182cc", "#00befa", "#0182cc"]
-    //         },
-    //         shape: {
-    //             type: "circle"
-    //         },
-    //         opacity: {
-    //             value: 1,
-    //             random: !1,
-    //             anim: {
-    //                 enable: !1
-    //             }
-    //         },
-    //         size: {
-    //             value: 3,
-    //             random: !0,
-    //             anim: {
-    //                 enable: !1
-    //             }
-    //         },
-    //         line_linked: {
-    //             enable: !1
-    //         },
-    //         move: {
-    //             enable: !0,
-    //             speed: 2,
-    //             direction: "none",
-    //             random: !0,
-    //             straight: !1,
-    //             out_mode: "out"
-    //         }
-    //     },
-    //     interactivity: {
-    //         detect_on: "canvas",
-    //         events: {
-    //             onhover: {
-    //                 enable: !1
-    //             },
-    //             onclick: {
-    //                 enable: !1
-    //             },
-    //             resize: !0
-    //         }
-    //     },
-    //     retina_detect: !0
-    // })
-
-
     $.get("https://api.coingecko.com/api/v3/coins/growth-defi", function(data, status){
         if(status === 'success') {
             // $("#gro-supply").html(data.market_data.total_supply);
@@ -318,6 +265,13 @@ $(window).on("load", function() {
         }
     });
 
+
+
+    $.get("/rest/grocirculation", function(data, status){
+        if(status === 'success') {
+            $("#gro-supply").html(numberWithCommas(data.circulation.toFixed(2)));
+        }
+    });
 });
 
 function numberWithCommas(x) {
