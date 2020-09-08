@@ -261,17 +261,21 @@ $(window).on("load", function() {
         if(status === 'success') {
             // $("#gro-supply").html(data.market_data.total_supply);
             $("#gro-volume").html(numberWithCommas(data.market_data.total_volume.usd) + " $");
-            $("#gro-price").html(data.market_data.current_price.usd + " $");
+            var price = data.market_data.current_price.usd;
+            $("#gro-price").html(price + " $");
+
+            $.get("/rest/grocirculation", function(data, status){
+                if(status === 'success') {
+                    $("#gro-supply").html(numberWithCommas(data.circulation.toFixed(2)));
+                    $("#gro-marketcap").html(numberWithCommas((price * data.circulation).toFixed(2))+ " $");
+                }
+            });
         }
     });
 
 
 
-    $.get("/rest/grocirculation", function(data, status){
-        if(status === 'success') {
-            $("#gro-supply").html(numberWithCommas(data.circulation.toFixed(2)));
-        }
-    });
+
 });
 
 function numberWithCommas(x) {
