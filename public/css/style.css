@@ -3845,24 +3845,24 @@ Stats currency area
     }
 }
 #stats .rete-list h2 {
-    font-size: 25px;
+    font-size: 18px;
     font-weight: 900;
     color: #ffffff;
     text-transform: capitalize;
 }
 @media only screen and (max-width: 1600px) {
     #stats .rete-list h2 {
-        font-size: 25px;
+        font-size: 18px;
     }
 }
 @media only screen and (max-width: 1200px) {
     #stats .rete-list h2 {
-        font-size: 25px;
+        font-size: 18px;
     }
 }
 @media only screen and (max-width: 992px) {
     #stats .rete-list h2 {
-        font-size: 25px;
+        font-size: 18px;
     }
 }
 #stats .rete-list h2 img {
