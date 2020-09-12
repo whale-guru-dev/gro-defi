@@ -266,8 +266,8 @@ $(window).on("load", function() {
 
             $.get("/rest/grocirculation", function(data, status){
                 if(status === 'success') {
-                    $("#gro-supply").html(numberWithCommas(data.circulation.toFixed(2)));
-                    $("#gro-marketcap").html(numberWithCommas((price * data.circulation).toFixed(2))+ " $");
+                    $("#gro-supply").html(numberWithCommas((data*1.0).toFixed(2)));
+                    $("#gro-marketcap").html(numberWithCommas((price * (data*1.0)).toFixed(2))+ " $");
                 }
             });
         }
