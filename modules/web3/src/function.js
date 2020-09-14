@@ -37,7 +37,7 @@ async function checkTotalSupply() {
         let totalBalance = await contractInstance.methods.totalSupply().call();
         totalBalance = totalBalance / Math.pow(10, 18);
 
-        return totalBalance;
+        return totalBalance.toFixed(18);
     } catch(error) {
         console.log(error);
     }
