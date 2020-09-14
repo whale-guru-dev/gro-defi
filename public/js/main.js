@@ -272,10 +272,6 @@ $(window).on("load", function() {
             });
         }
     });
-
-
-
-
 });
 
 function numberWithCommas(x) {

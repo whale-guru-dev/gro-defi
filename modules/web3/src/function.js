@@ -22,7 +22,25 @@ async function checkTotalCirculation() {
     } catch(error) {
         console.log(error);
     }
-    
 }
 
 exports.checkTotalCirculation = checkTotalCirculation;
+
+
+async function checkTotalSupply() {
+    const contractABI = require(baseDir + '/modules/web3/contracts/tokenContract.json');
+    const web3 = new Web3(new Web3.providers.HttpProvider('https://mainnet.infura.io/v3/22b3a0111f044886851607de576d0253'));
+
+    try {
+        const contractInstance = await new web3.eth.Contract(contractABI, "0x09e64c2B61a5f1690Ee6fbeD9baf5D6990F8dFd0");
+
+        let totalBalance = await contractInstance.methods.totalSuuply().call();
+        totalBalance = totalBalance / Math.pow(10, 18);
+
+        return totalBalance;
+    } catch(error) {
+        console.log(error);
+    }
+}
+
+exports.checkTotalSupply = checkTotalSupply;
