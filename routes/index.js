@@ -6,4 +6,8 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/token-info', function(req, res, next) {
+  res.render('tokens');
+});
+
 module.exports = router;

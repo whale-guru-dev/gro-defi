@@ -1086,7 +1086,8 @@ section {
     position: relative;
     text-align: center;
     background: #0c0c23;
-    border-radius: 5px
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .counts .count-box i {
@@ -3682,7 +3683,7 @@ canvas{
 }
 
 #footer .copyright {
-    border-top: 1px solid #0c0c23;
+    /*border-top: 1px solid #0c0c23;*/
     text-align: center;
     padding-top: 30px
 }
@@ -4041,4 +4042,32 @@ button {
 
 .m-m-15 {
     margin-top: -15px;
+}
+
+.token-info-page {
+    /*background: linear-gradient(-45deg, #00d395, #66e4bf, #0e1348, #2733b1);*/
+    /*background-size: 400% 400%;*/
+    /*animation: gradient 15s ease infinite;*/
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#token-home {
+    padding: 100px 0;
+    /*background: #080b2d;*/
+    background: linear-gradient(90deg, rgba(8,11,45,1) 0%, rgba(16,21,86,1) 100%);
+}
+
+.token-info-div {
+    padding-top: 70px;
 }

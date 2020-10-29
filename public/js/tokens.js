@@ -148,7 +148,7 @@ var GRO = {};
         !function s() {
             var x = e.width / 2;
             var y = e.height / 2;
-                // Radii of the white glow.
+            // Radii of the white glow.
             var outerRadius = y;
 
             var gradient = t.createRadialGradient(x, y, 0, x, y, outerRadius);
@@ -170,110 +170,10 @@ var GRO = {};
         $("#can").length && GRO.spinnerAnimation()
     }))
 })(jQuery);
-var account;
 
-function getLeaderboard() {
-    $.getJSON("/leaderboard", function (data) {
-        $('#leaderboard tbody').empty();
-        var toFetch = data.length;
-        if (toFetch > 20) {
-            toFetch = 20;
-        }
-        for (var i = 0; i < toFetch; i += 2) {
-            const row = (i / 2) + 1;
-            const player = data[i].slice(0, 14) + "...";
-            const volume = Math.round((new Number(data[i + 1]) + Number.EPSILON) * 100) / 100;
-            var prize = "100";
-            if (i == 0) {
-                prize = "750";
-            } else if (i == 2) {
-                prize = "500";
-            } else if (i == 4) {
-                prize = "250";
-            } else if (i == 6) {
-                prize = "150";
-            } else if (i == 8) {
-                prize = "150";
-            }
-            $("#leaderboard").append("<tr><th scope='row'>" + row + "</th><td><a href='https://etherscan.com/address/" + data[i] + "' target='_blank' style='color: #fff'>" + player + "</a></td><td><img src='assets/img/logo.png' height='24px'><span style='vertical-align: middle'> " + volume + "</span></td><td><img src='assets/img/logo.png' height='24px'><span style='vertical-align: middle'> " + prize + "</span></td></tr>");
-        }
-        if (account != null) {
-            var position = "-";
-            var volume = "0";
-            var prize = "0";
-            var found = false;
-            for (var i = 0; i < toFetch; i += 2) {
-                if (data[i].toLowerCase() == account.toLowerCase()) {
-                    position = (i / 2) + 1;
-                    volume = Math.round((new Number(data[i + 1]) + Number.EPSILON) * 100) / 100;
-                    if (i == 0) {
-                        prize = "750";
-                    } else if (i == 2) {
-                        prize = "500";
-                    } else if (i == 4) {
-                        prize = "250";
-                    } else if (i == 6) {
-                        prize = "150";
-                    } else if (i == 8) {
-                        prize = "150";
-                    } else if (i <= 18) {
-                        prize = "100";
-                    }
-                    found = true;
-                    break;
-                }
-            }
-            if (!found) {
-                position = (data.length / 2) + 1;
-            }
-            $("#leaderboard").append("<tr><th scope='row'>" + position + "</th><td><a href='https://etherscan.com/address/" + account + "' target='_blank' style='color: #fff'><b>YOU</b></a></td><td><img src='assets/img/logo.png' height='24px'><span style='vertical-align: middle'> " + volume + "</span></td><td><img src='assets/img/logo.png' height='24px'><span style='vertical-align: middle'> " + prize + "</span></td></tr>");
-        }
-        setTimeout(getLeaderboard, 15000);
-    });
-}
 
-function checkAccount() {
-    if (window.web3) {
-        window.web3.eth.getAccounts((err, accounts) => {
-            if (accounts == null || accounts.length == 0) {
-                console.log("NO ACCOUNT CONNECTED");
-                $("#connect").show();
-            } else {
-                $("#connect").hide();
-                if (account != accounts[0]) {
-                    account = accounts[0];
-                    getLeaderboard();
-                }
-            }
-        });
-    }
-    setTimeout(checkAccount, 500);
-}
+$(document).on( "click", ".token-box", function() {
+    var token = $(this).data('token');
 
-function connectAccount() {
-    if (window.ethereum) {
-        window.ethereum.enable();
-    }
-}
-
-$(window).on("load", function() {
-    $.get("https://api.coingecko.com/api/v3/coins/growth-defi", function(data, status){
-        if(status === 'success') {
-            // $("#gro-supply").html(data.market_data.total_supply);
-            $("#gro-volume").html(numberWithCommas(data.market_data.total_volume.usd) + " $");
-            var price = data.market_data.current_price.usd;
-            $("#gro-price").html(price + " $");
-
-            $.get("/rest/grocirculation", function(data, status){
-                if(status === 'success') {
-                    $("#gro-supply").html(numberWithCommas((data*1.0).toFixed(2)));
-                    $("#gro-marketcap").html(numberWithCommas((price * (data*1.0)).toFixed(2))+ " $");
-                }
-            });
-        }
-    });
+    $("#token-name").html(token)
 });
-
-function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
