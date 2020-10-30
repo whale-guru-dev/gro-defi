@@ -4113,8 +4113,8 @@ button {
     height: 4px;
     background: -webkit-gradient(linear, right top, left top, from(rgba(43, 8, 8, 0)), to(#03ff9d));
     background: linear-gradient(to left, rgba(43, 8, 8, 0), #03ff9d);
-    -webkit-animation: 2s animateTop linear infinite;
-    animation: 2s animateTop linear infinite;
+    -webkit-animation: 4s animateTop linear infinite;
+    animation: 4s animateTop linear infinite;
 }
 
 @keyframes animateTop {
@@ -4135,8 +4135,8 @@ button {
     width: 4px;
     background: -webkit-gradient(linear, left bottom, left top, from(rgba(43, 8, 8, 0)), to(#03ff9d));
     background: linear-gradient(to top, rgba(43, 8, 8, 0), #03ff9d);
-    -webkit-animation: 2s animateRight linear -1s infinite;
-    animation: 2s animateRight linear -1s infinite;
+    -webkit-animation: 4s animateRight linear -1s infinite;
+    animation: 4s animateRight linear -1s infinite;
 }
 
 @keyframes animateRight {
@@ -4157,8 +4157,8 @@ button {
     height: 4px;
     background: -webkit-gradient(linear, left top, right top, from(rgba(43, 8, 8, 0)), to(#03ff9d));
     background: linear-gradient(to right, rgba(43, 8, 8, 0), #03ff9d);
-    -webkit-animation: 2s animateBottom linear infinite;
-    animation: 2s animateBottom linear infinite;
+    -webkit-animation: 4s animateBottom linear infinite;
+    animation: 4s animateBottom linear infinite;
 }
 
 @keyframes animateBottom {

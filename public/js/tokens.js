@@ -177,5 +177,5 @@ $(document).on( "click", ".token-box", function() {
 
     $("#token-name").html(token);
 
-    $("#token-img").attr("src", `/img/${token}.png`)
+    // $("#token-img").attr("src", `/img/${token}.png`)
 });
