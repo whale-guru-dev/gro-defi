@@ -175,5 +175,7 @@ var GRO = {};
 $(document).on( "click", ".token-box", function() {
     var token = $(this).data('token');
 
-    $("#token-name").html(token)
+    $("#token-name").html(token);
+
+    $("#token-img").attr("src", `/img/${token}.png`)
 });
