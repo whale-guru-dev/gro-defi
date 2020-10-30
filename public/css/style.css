@@ -4241,7 +4241,7 @@ html *, html *:before, html *:after {
 }
 
 .token-box:hover {
-    color: white;
+    color: #101453;
 }
 
 .token-box:hover:before {
