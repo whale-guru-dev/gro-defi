@@ -1088,6 +1088,7 @@ section {
     background: #0c0c23;
     border-radius: 5px;
     cursor: pointer;
+    margin: auto;
 }
 
 .counts .count-box i {
