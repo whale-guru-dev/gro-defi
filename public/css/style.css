@@ -4257,15 +4257,35 @@ html *, html *:before, html *:after {
     margin-top: 5px;
 }
 
-.round-text {
-    letter-spacing: 2px;
-    text-align: center;
-    text-transform: uppercase;
-    margin-bottom: 0;
+#coming-soon-div {
+    height: 200px;
+}
+
+.coming-soon-text {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     color: white;
-    color: transparent;
-    background: linear-gradient(180deg, #fefefe, #bbb);
+    width: 100%;
+    font-family: Times New Roman, serif;
+    /* background: -webkit-linear-gradient(deeppink, yellow, deeppink, purple);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-filter: drop-shadow(-1px -1px white) drop-shadow(1px 1px #808080) drop-shadow(1px 1px #7a7a7a) drop-shadow(1px 1px #757575) drop-shadow(1px 1px #707070) drop-shadow(1px 1px #6b6b6b) drop-shadow(1px 1px #666666) drop-shadow(12px 12px 30px rgba(0, 0, 0, 0.2)) drop-shadow(12px 12px 10px rgba(0, 0, 0, 0.2));
+    -webkit-text-fill-color: transparent; */
+    font-size: 70px;
+    /* text-transform: uppercase; */
+}
+
+.coming-soon-text:before {
+    content: attr(data-text);
+    position: absolute;
+    transform-origin: bottom;
+    transform: rotateX(180deg);
+    line-height: 1.14em;
+    background: linear-gradient(0deg, #000000 0, transparent 70%);
+    -webkit-background-clip: text;
+    -webkit-text-color: transparent;
+    opacity: 0.3;
 }
