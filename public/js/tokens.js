@@ -166,16 +166,102 @@ var GRO = {};
             }
             o += .002, i += .005, a += .005, window.requestAnimationFrame(s)
         }()
-    },n.ready((function () {
+    }, n.ready((function () {
         $("#can").length && GRO.spinnerAnimation()
     }))
 })(jQuery);
 
 
-$(document).on( "click", ".token-box", function() {
+$(document).on("click", ".token-box", function () {
     var token = $(this).data('token');
 
     $("#token-name").html(token);
 
+    // if(token === 'dai' || token === 'usdc') {
+    //     $.get(`https://api.coingecko.com/api/v3/coins/${token}`, function(data, status){
+    //         if(status === 'success') {
+    //             // $("#gro-supply").html(data.market_data.total_supply);
+    //             $("#gro-volume").html(numberWithCommas(data.market_data.total_volume.usd) + " $");
+    //             var price = data.market_data.current_price.usd;
+    //             $("#gro-price").html(price + " $");
+    //
+    //             $.get("/rest/grocirculation", function(data, status){
+    //                 if(status === 'success') {
+    //                     $("#gro-supply").html(numberWithCommas((data*1.0).toFixed(2)));
+    //                     $("#gro-marketcap").html(numberWithCommas((price * (data*1.0)).toFixed(2))+ " $");
+    //                 }
+    //             });
+    //         }
+    //     });
+    // }
+
     // $("#token-img").attr("src", `/img/${token}.png`)
+});
+
+$(window).on('load', function () {
+    var gcTokens = ['gctoken_bat', 'gctoken_dai', 'gctoken_eth', 'gctoken_rep', 'gctoken_sai', 'gctoken_uni', 'gctoken_usdc', 'gctoken_usdt', 'gctoken_wbtc', 'gctoken_zrx'];
+    var tokens = ['dai', 'usdc'];
+    var gaTokens = ['gatoken_bat', 'gatoken_busd', 'gatoken_dai', 'gatoken_enj', 'gatoken_knc', 'gatoken_lend', 'gatoken_link', 'gatoken_mana', 'gatoken_mkr', 'gatoken_ren',
+        'gatoken_rep', 'gatoken_snx', 'gatoken_susd', 'gatoken_tusdt', 'gatoken_uni', 'gatoken_usdc', 'gatoken_usdt', 'gatoken_wbtc', 'gatoken_yfi', 'gatoken_zrx'];
+    var gTokens = ['gAAVE', 'gBAT', 'gCOMP', 'gDAI', 'gENJ', 'gETH', 'gKNC', 'gLINK', 'gMANA', 'gREN', 'gSNX', 'gUNI', 'gUSDC', 'gWBTC', 'gYFI', 'gZRX'];
+
+    var gcTokensHtml = '<div class="col-lg-12 text-center">\n' +
+        '                    <h1>gcTokens</h1>\n' +
+        '                </div>';
+    gcTokens.forEach(each => {
+        gcTokensHtml = gcTokensHtml + `<div class="col-lg-2 col-md-12 tokens-info-col">
+                    <div class="count-box token-box" data-token="${each}">
+                        <img src="img/gcTokens/${each}.png" class="token-info-img">
+                        <span>1000$</span>
+                        <span>${each}</span>
+                        <p>Info</p>
+                    </div>
+                </div>`;
+    });
+    $("#gcTokensDiv").html(gcTokensHtml);
+
+    var tokensHtml = '<div class="col-lg-12 text-center">\n' +
+        '                    <h1>Tokens</h1>\n' +
+        '                </div>';
+    tokens.forEach(each => {
+        tokensHtml = tokensHtml + `<div class="col-lg-2 col-md-12 tokens-info-col">
+                    <div class="count-box token-box" data-token="${each}">
+                        <img src="img/tokens/${each}.png" class="token-info-img">
+                        <span>1000$</span>
+                        <span>${each}</span>
+                        <p>Info</p>
+                    </div>
+                </div>`;
+    });
+    $("#tokensDiv").html(tokensHtml);
+
+    var gaTokensHtml = '<div class="col-lg-12 text-center">\n' +
+        '                    <h1>gaTokens</h1>\n' +
+        '                </div>';
+    gaTokens.forEach(each => {
+        gaTokensHtml = gaTokensHtml + `<div class="col-lg-2 col-md-12 tokens-info-col">
+                    <div class="count-box token-box" data-token="${each}">
+                        <img src="img/gaTokens/${each}.png" class="token-info-img">
+                        <span>1000$</span>
+                        <span>${each}</span>
+                        <p>Info</p>
+                    </div>
+                </div>`;
+    });
+    $("#gaTokensDiv").html(gaTokensHtml);
+
+    var gTokensHtml = '<div class="col-lg-12 text-center">\n' +
+        '                    <h1>gTokens</h1>\n' +
+        '                </div>';
+    gTokens.forEach(each => {
+        gTokensHtml = gTokensHtml + `<div class="col-lg-2 col-md-12 tokens-info-col">
+                    <div class="count-box token-box" data-token="${each}">
+                        <img src="img/gTokens/${each}.png" class="token-info-img">
+                        <span>1000$</span>
+                        <span>${each}</span>
+                        <p>Info</p>
+                    </div>
+                </div>`;
+    });
+    $("#gTokensDiv").html(gTokensHtml);
 });

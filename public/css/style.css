@@ -1081,8 +1081,8 @@ section {
 }
 
 .counts .count-box {
-    padding: 30px 30px 25px;
-    width: 50%;
+    padding: 15px 0px 0px;
+    /*width: 50%;*/
     position: relative;
     text-align: center;
     background: #0c0c23;
@@ -4217,7 +4217,7 @@ html *, html *:before, html *:after {
     display: block;
     overflow: hidden;
     width: 100%;
-    height: 135px;
+    height: 150px;
     /*max-width: 250px;*/
     margin: 1rem auto;
     border: 1px solid currentColor;
@@ -4235,7 +4235,7 @@ html *, html *:before, html *:after {
     bottom: 0;
     left: 0;
     border-right: 50px solid transparent;
-    border-bottom: 135px solid #03ff9d;
+    border-bottom: 150px solid #03ff9d;
     -webkit-transform: translateX(-100%);
     transform: translateX(-100%);
 }
@@ -4247,4 +4247,12 @@ html *, html *:before, html *:after {
 .token-box:hover:before {
     -webkit-transform: translateX(0);
     transform: translateX(0);
+}
+
+.token-info-img {
+    margin-bottom: 14px; width: 30%;
+}
+
+.tokens-info-col {
+    margin-top: 5px;
 }
