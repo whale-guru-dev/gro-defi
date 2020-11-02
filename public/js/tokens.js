@@ -208,7 +208,7 @@ $(document).on("click", ".token-box", function () {
 });
 
 $(window).on('load', function () {
-    var gcTokens = ['gctoken_bat', 'gctoken_dai', 'gctoken_eth', 'gctoken_rep', 'gctoken_sai', 'gctoken_uni', 'gctoken_usdc', 'gctoken_usdt', 'gctoken_wbtc', 'gctoken_zrx'];
+    var gcTokens = ['gctoken_dai', 'gctoken_usdc', 'gctoken_bat', 'gctoken_eth', 'gctoken_rep', 'gctoken_sai', 'gctoken_uni',  'gctoken_usdt', 'gctoken_wbtc', 'gctoken_zrx'];
     var tokens = ['dai', 'usdc'];
     var gaTokens = ['gatoken_bat', 'gatoken_busd', 'gatoken_dai', 'gatoken_enj', 'gatoken_knc', 'gatoken_lend', 'gatoken_link', 'gatoken_mana', 'gatoken_mkr', 'gatoken_ren',
         'gatoken_rep', 'gatoken_snx', 'gatoken_susd', 'gatoken_tusdt', 'gatoken_uni', 'gatoken_usdc', 'gatoken_usdt', 'gatoken_wbtc', 'gatoken_yfi', 'gatoken_zrx'];
