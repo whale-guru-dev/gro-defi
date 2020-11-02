@@ -176,24 +176,33 @@ $(document).on("click", ".token-box", function () {
     var token = $(this).data('token');
 
     $("#token-name").html(token);
+    var target = $(".token-info-div");
+    var scrollto = target.offset().top;
 
-    // if(token === 'dai' || token === 'usdc') {
-    //     $.get(`https://api.coingecko.com/api/v3/coins/${token}`, function(data, status){
-    //         if(status === 'success') {
-    //             // $("#gro-supply").html(data.market_data.total_supply);
-    //             $("#gro-volume").html(numberWithCommas(data.market_data.total_volume.usd) + " $");
-    //             var price = data.market_data.current_price.usd;
-    //             $("#gro-price").html(price + " $");
-    //
-    //             $.get("/rest/grocirculation", function(data, status){
-    //                 if(status === 'success') {
-    //                     $("#gro-supply").html(numberWithCommas((data*1.0).toFixed(2)));
-    //                     $("#gro-marketcap").html(numberWithCommas((price * (data*1.0)).toFixed(2))+ " $");
-    //                 }
-    //             });
-    //         }
-    //     });
-    // }
+    $('html, body').animate({scrollTop: scrollto}, 1500, 'easeInOutExpo');
+
+    if(token === 'dai' || token === 'usdc') {
+        // $.get(`https://api.coingecko.com/api/v3/coins/${token}`, function(data, status){
+        //     if(status === 'success') {
+        //         // $("#gro-supply").html(data.market_data.total_supply);
+        //         $("#gro-volume").html(numberWithCommas(data.market_data.total_volume.usd) + " $");
+        //         var price = data.market_data.current_price.usd;
+        //         $("#gro-price").html(price + " $");
+        //
+        //         $.get("/rest/grocirculation", function(data, status){
+        //             if(status === 'success') {
+        //                 $("#gro-supply").html(numberWithCommas((data*1.0).toFixed(2)));
+        //                 $("#gro-marketcap").html(numberWithCommas((price * (data*1.0)).toFixed(2))+ " $");
+        //             }
+        //         });
+        //     }
+        // });
+        $("#coming-soon-div").hide();
+        $("#token-details-div").show();
+    } else {
+        $("#coming-soon-div").show();
+        $("#token-details-div").hide();
+    }
 
     // $("#token-img").attr("src", `/img/${token}.png`)
 });
