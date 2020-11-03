@@ -4289,3 +4289,26 @@ html *, html *:before, html *:after {
     -webkit-text-color: transparent;
     opacity: 0.3;
 }
+/*Coder*/
+.token-bc {
+    background: transparent!important;
+}
+.info-box h1 {
+    font-size: 70px;
+}
+.info-box img {
+    padding: 40px 0;
+}
+p {
+    line-height: 30px;
+}
+.more-info p {
+    margin: 0;
+}
+@media (max-width: 768px) {
+  .token-bc {
+    text-align: center;
+}
+  
+}
+/*Coder End*/

@@ -10,4 +10,8 @@ router.get('/token-info', function(req, res, next) {
   res.render('tokens');
 });
 
+router.get('/Security', function(req, res, next) {
+  res.render('security');
+});
+
 module.exports = router;
