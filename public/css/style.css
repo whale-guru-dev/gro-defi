@@ -4311,4 +4311,8 @@ p {
 }
   
 }
+
+.security-page section{
+    background: radial-gradient(50% 50%, #161d6b 0%, #0B0F3C 87%);
+}
 /*Coder End*/
