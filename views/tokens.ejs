@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>GRO - Liquidity DeFi Token</title>
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+
+    <link href="security/img/favicon.png" rel="icon">
+    <link href="security/img/favicon.png" rel="apple-touch-icon">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+          rel="stylesheet">
+
+    <link href="security/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="security/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="security/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="security/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="security/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="security/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="security/vendor/aos/aos.css" rel="stylesheet">
+    <link href="security/font-awesome/5.12.0-2/css/all.min.css" rel="stylesheet">
+
+    <link href="security/css/style.css" rel="stylesheet">
+    <link href="security/css/rocket-separator.css" rel="stylesheet">
+</head>
+<body class="token-info-page">
+
+<header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center">
+        <div class="logo mr-auto">
+            <h1 class="text-light">
+                <a href="/">
+                    <span><img src="/img/logo.png"></span>
+                </a>
+            </h1>
+        </div>
+        <nav class="nav-menu d-none d-lg-block">
+            <ul>
+                <li class="active"><a href="#home">Home</a></li>
+                <!--<li><a href="#details">GRO'S VALUE PROPOSITION</a></li>-->
+                <li><a href="/pdf/GROWTH_DeFi_V1.0.pdf" target="_blank">WHITEPAPER</a></li>
+                <li><a href="#swap">Mooniswap</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="#faq">FAQs</a></li>
+                <li>
+                    <a href="https://t.me/growthdefi">
+                        <em class="social-icon fab fa-telegram"></em>
+                    </a>
+				</li>
+				<li>
+                    <a href="https://twitter.com/GrowthDefi" target="_blank">
+                        <em class="social-icon fab fa-twitter"></em>
+                    </a>
+                </li>
+				<li>
+                    <a href="https://discord.com/widget?id=747524810363502764&theme=dark" target="_blank">
+                        <em class="social-icon fab fa-discord"></em>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main id="main">
+    <section id="token-home" data-rocket-separator="true"
+             data-rocket-separator-type="waves_svg_separator"
+             data-rocket-separator-position="top_bottom_separator"
+             data-rocket-separator-shape-background="#f1f2f4"
+             class="rocket-row-with-separator rocket-row-separator-type-waves_svg_separator">
+        <svg class="rocket-separator waves_svg_separator" fill="#00000000"
+             xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 100"
+             stroke="#03ff9d"
+             preserveAspectRatio="none" style="display: none;">
+            <path d="M0 100 C40 0 60 0 100 100 Z"/>
+        </svg>
+        <svg class="rocket-separator waves_svg_separator" style="z-index: 1;transform: translate(-50%, 0) scaleX(-1);"
+             fill="#0B0F3C"
+             xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 100"
+             stroke="#03ff9d"
+             preserveAspectRatio="none">
+            <path d="M0 100 C40 40 60 40 100 100 Z"/>
+        </svg>
+        <div class="container">
+            <div class="row token-info-div">
+                <div class="col-md-6 offset-md-3 text-center">
+                    <div class="token-info-box animated-box">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+<!--                        <img id="token-img" src="img/gcDAI.png" width="100"/>-->
+                        <h1><b id="token-name">gcDAI</b> Info</h1>
+
+                        <div id="coming-soon-div" style="display: none;">
+                            <h2 class="coming-soon-text"  data-text="Coming Soon...">Coming Soon ...</h2>
+                        </div>
+
+                        <div id="token-details-div">
+                            <p>Price : <b id="price">NA</b></p>
+
+                            <p>24 Hour Price Change % : <b id="price_change">NA</b></p>
+
+                            <p>Market liquidity : <b id="liquidity">NA</b></p>
+
+                            <p>Amount minted : <b id="minted">NA</b></p>
+
+                            <p>Exchange rate : <b id="rate">1 DAI = NA</b></p>
+
+                            <p>Number of investors for each gToken : <b id="numInvestors">NA</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row counts" id="gcTokensDiv"></div>
+
+            <!--<div class="row counts" id="tokensDiv"></div>-->
+
+            <div class="row counts" id="gaTokensDiv"></div>
+
+            <div class="row counts" id="gTokensDiv"></div>
+        </div>
+    </section>
+
+</main>
+
+<footer id="footer">
+    <svg class="footer-separator-svg footer-separator-svg__waves_svg_separator" xmlns="http://www.w3.org/2000/svg"
+         version="1.0" width="1200" fill="transparent" height="30" viewBox="0 0 1200 30" preserveAspectRatio="none">
+        <path d="M0,0S1.209,1.508,200.671,7.031C375.088,15.751,454.658,30,600,30V0H0ZM1200,0s-90.21,1.511-200.671,7.034C824.911,15.751,745.342,30,600,30V0h600Z"/>
+    </svg>
+
+    <canvas id="can"></canvas>
+
+    <div class="container">
+        <div class="row text-center footer-defi-eco-logo">
+            <div class="col">
+                <img class="footer-logo" src="/img/logo.png" height="150"/>
+            </div>
+        </div>
+
+        <div class="row text-center footer-defi-eco-logo">
+            <div class="col-md-12">
+                <h6>OUR IOST DEFI ECOSYSTEM</h6>
+            </div>
+
+            <div class="offset-md-2 col-md-4">
+                <a href="https://powermine.club" target="_blank">
+                    <img class="footer-powermine-logo" src="/img/logos/powermine.png" height="75"/>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="https://powerdefi.io" target="_blank">
+                    <img class="footer-powerdefi-logo" src="/img/logos/powerdefi.png" height="75"/>
+                </a>
+            </div>
+        </div>
+
+        <div class="copyright">
+            &copy; Copyright GROWTH foundation.
+            <strong>
+                <!--                <span><img src="/img/logo.png" height="20"></span>-->
+                <!-- <span>2020</span> -->
+            </strong> All
+            Rights Reserved
+        </div>
+    </div>
+</footer>
+<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+<div class="preloader" id="preloader">
+    <div class="loadingWrap">
+        <img src="/img/favicon.png" width="200">
+    </div>
+</div>
+
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r68/three.min.js"></script>-->
+<script src="security/vendor/jquery/jquery.min.js"></script>
+<script src="security/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="security/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="security/vendor/php-email-form/validate.js"></script>
+<script src="security/vendor/venobox/venobox.min.js"></script>
+<script src="security/vendor/waypoints/jquery.waypoints.min.js"></script>
+<script src="security/vendor/counterup/counterup.min.js"></script>
+<script src="security/vendor/owl.carousel/owl.carousel.min.js"></script>
+<script src="security/vendor/aos/aos.js"></script>
+<script src="security/font-awesome/5.12.0-2/js/all.min.js"></script>
+<script src="security/js/lottie-player.js"></script>
+<script src="security/js/three.js"></script>
+<script src="security/js/stats.min.js"></script>
+<script src="security/js/Projector.js"></script>
+<script src="security/js/CanvasRenderer.js"></script>
+<script src="security/js/leaflet.js"></script>
+<script src="security/js/particle.js"></script>
+<script src="security/vendor/rocket/custom.js"></script>
+<script src="security/js/tokens.js"></script>
+<script src="/js/main.js"></script>
+
+</body>
+
+</html>
