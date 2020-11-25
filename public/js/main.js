@@ -272,6 +272,32 @@ $(window).on("load", function() {
             });
         }
     });
+
+    $.ajax({url: "https://api.thegraph.com/subgraphs/name/growthdefi/growth-defi",
+        contentType: "application/json",type:'POST',
+        data: JSON.stringify({ query:`{
+              tokens(where: {symbol: "stkGRO"}) {
+                id
+                listingDate
+                totalReserve
+                name
+                symbol
+                countTokenDailyDatas
+                cumulativeDailyChange
+                lastDelta
+                lastAvgPrice
+                tokenDailyDatas(first: 2) {
+                  id
+                  avgUnderlyingPrice
+                }
+              }
+            }`
+        }),
+        success: function(result) {
+            var totalReserve = result.data.tokens[0].totalReserve * 1.0 / 10**18;
+            $("#gro-staked").html(totalReserve.toFixed(4));
+        }
+    });
 });
 
 function numberWithCommas(x) {
