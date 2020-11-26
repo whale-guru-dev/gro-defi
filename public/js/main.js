@@ -263,6 +263,8 @@ $(window).on("load", function() {
             $("#gro-volume").html(numberWithCommas(data.market_data.total_volume.usd) + " $");
             var price = data.market_data.current_price.usd;
             $("#gro-price").html(price + " $");
+            var groBurnt = 1000000 - data.market_data.total_supply * 1.0;
+            $("#gro-burnt").html(numberWithCommas(groBurnt.toFixed(2)));
 
             $.get("/rest/grocirculation", function(data, status){
                 if(status === 'success') {
