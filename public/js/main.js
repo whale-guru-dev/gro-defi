@@ -260,7 +260,6 @@ $(window).on("load", function() {
     $.get("https://api.coingecko.com/api/v3/coins/growth-defi", function(data, status){
         if(status === 'success') {
             // $("#gro-supply").html(data.market_data.total_supply);
-            $("#gro-volume").html(numberWithCommas(data.market_data.total_volume.usd) + " $");
             var price = data.market_data.current_price.usd;
             $("#gro-price").html(price + " $");
             var groBurnt = 1000000 - data.market_data.total_supply * 1.0;
@@ -298,6 +297,30 @@ $(window).on("load", function() {
         success: function(result) {
             var totalReserve = result.data.tokens[0].totalReserve * 1.0 / 10**18;
             $("#gro-staked").html(totalReserve.toFixed(4));
+        }
+    });
+
+    $.ajax({url: "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2",
+        contentType: "application/json",type:'POST',
+        data: { query:`{
+              pairDayDatas (
+                where:{
+                  pairAddress: "0x208bd5dc470eba21571ddb439801a614ed346376"
+                }
+                first: 1
+                orderBy: timestamp
+                orderDirection: desc
+              ) { 
+                totalSupply
+                reserveUSD
+                dailyVolumeToken0
+                dailyVolumeToken1
+              }
+            }`
+        },
+        success: function(result) {
+            let volume = result.data.pairDayDatas[0];
+            $("#gro-volume").html(numberWithCommas(volume.dailyVolumeToken1 * 1000).toFixed(3) + " $");
         }
     });
 });
