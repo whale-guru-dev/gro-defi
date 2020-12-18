@@ -302,13 +302,13 @@ $(window).on("load", function() {
 
     $.ajax({url: "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2",
         contentType: "application/json",type:'POST',
-        data: { query:`{
+        data: JSON.stringify({ query:`{
               pairDayDatas (
                 where:{
                   pairAddress: "0x208bd5dc470eba21571ddb439801a614ed346376"
                 }
                 first: 1
-                orderBy: timestamp
+                orderBy: date
                 orderDirection: desc
               ) { 
                 totalSupply
@@ -317,10 +317,10 @@ $(window).on("load", function() {
                 dailyVolumeToken1
               }
             }`
-        },
+        }),
         success: function(result) {
             let volume = result.data.pairDayDatas[0];
-            $("#gro-volume").html(numberWithCommas(volume.dailyVolumeToken1 * 1000).toFixed(3) + " $");
+            $("#gro-volume").html(numberWithCommas((volume.dailyVolumeToken1 * 1000).toFixed(0)) + " $");
         }
     });
 });
