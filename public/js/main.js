@@ -320,7 +320,9 @@ $(window).on("load", function() {
         }),
         success: function(result) {
             let volume = result.data.pairDayDatas[0];
-            $("#gro-volume").html(numberWithCommas((volume.dailyVolumeToken1 * 1000).toFixed(0)) + " $");
+            let volumeText = numberWithCommas((volume.dailyVolumeToken1 * 1000).toFixed(1));
+
+            $("#gro-volume").html(volumeText + " $");
         }
     });
 });
