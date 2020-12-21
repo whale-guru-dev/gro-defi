@@ -274,7 +274,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 40px;
     height: 40px;
     border-radius: 50px;
-    background: #03ff9d;
+    background: #03ff9dab;
     color: #fff;
     transition: all .4s
 }
