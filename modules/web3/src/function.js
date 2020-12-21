@@ -35,7 +35,8 @@ async function checkTotalSupply() {
         const contractInstance = await new web3.eth.Contract(contractABI, "0x09e64c2B61a5f1690Ee6fbeD9baf5D6990F8dFd0");
 
         let totalBalance = await contractInstance.methods.totalSupply().call();
-        totalBalance = totalBalance / Math.pow(10, 18);
+        let contractBalance = await contractInstance.methods.balanceOf("0x3E7Ff81efBbAdf5FCA2810086b7f4C17a4F3682f").call()
+        totalBalance = (totalBalance*1 - contractBalance*1) / Math.pow(10, 18);
 
         return totalBalance.toFixed(18);
     } catch(error) {
