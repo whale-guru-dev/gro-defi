@@ -15,8 +15,11 @@ async function checkTotalCirculation() {
     
         let walletBalance = await contractInstance.methods.balanceOf("0x7674d2a14076e8af53ac4ba9bbcf0c19febe8899").call();
         walletBalance = walletBalance / Math.pow(10, 18);
+
+        let wallet1Balance = await contractInstance.methods.balanceOf("0x3e7ff81efbbadf5fca2810086b7f4c17a4f3682f").call();
+        wallet1Balance = wallet1Balance / Math.pow(10, 18);
     
-        let circulation = totalBalance - selfBalance - walletBalance;
+        let circulation = totalBalance - selfBalance - walletBalance - wallet1Balance;
         
         return circulation;
     } catch(error) {
